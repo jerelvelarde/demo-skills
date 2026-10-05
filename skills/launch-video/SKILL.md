@@ -15,10 +15,16 @@ Resolve the product, audience, strongest proof, CTA, approximate runtime, aspect
 
 For developer audiences, favor concrete artifacts: a command, working UI, protocol path, saved file, permission boundary, deploy target, or repository. Maintain a short claim-to-evidence table. Do not invent support, performance, adoption numbers, or customer endorsement.
 
+## Select the source and recipe
+
+For Studio projects, read [Studio workflow](references/studio-workflow.md) to locate the active composition, timeline, registry, review frames, and render commands. When working on OpenMuse, read the [OpenMuse recipe](references/openmuse-recipe.md); for OpenDots, read the [OpenDots recipe](references/opendots-recipe.md). These recipes explain production patterns, not current product evidence. Preserve existing manual edits and use supplied current implementation/captures to substantiate claims.
+
+For Slack scenes, use `slack-demo-video` when available; the starter also supplies `SlackThread` with clean and branded modes. Keep a clean clip for editor reuse and preserve its illustrative disclosure in notes. Choose the scene format that demonstrates the claim rather than defaulting every product to the same generic app card.
+
 ## Build the film
 
 1. Outline the beats with start/end frames, on-screen claim, evidence, and intended action. Adapt the story to the product; a useful starting point is problem → reveal → proof → ownership/integration → CTA. Read [story and motion](references/story-and-motion.md) for pacing, diagrams, typography, and audio.
-2. Reuse the project's render stack if it works. For a new project, the bundled Remotion starter provides `Launch`, `UiMockup`, and `DiagramLoop`. Find `gtm-os` in the repository root, or `assets/gtm-os` inside this installed skill. Read its README before running commands. Copy the starter into the requested project directory, then customize it. Do not install video dependencies into the user's product app without a reason.
+2. Reuse the project's render stack if it works. For a new project, the bundled Remotion starter provides `Launch`, `UiMockup`, `DiagramLoop`, `SlackThread`, `OpenMuseLaunch`, and `OpenDotsLaunch`. Find `gtm-os` in the repository root, or `assets/gtm-os` inside this installed skill. Read its README before running commands. Copy the starter into the requested project directory, then customize it. Do not install video dependencies into the user's product app without a reason.
 3. Establish shared design tokens before individual scenes: background, text contrast, type scale, spacing, borders, radii, logos, and motion timing. Keep a deliberate theme through transitions. Product footage should match that theme where the real app supports it.
 4. Use real recordings when requested. Read [recording](references/recording.md). Enlarge the app's UI before capture when components are too small; scaling/cropping the finished video does not meet that requirement. Preserve raw takes.
 5. Use illustrative interfaces only when appropriate, with their representation documented. For detailed UI choreography, use the companion `ui-mockup-video` skill when available; otherwise apply the same action → state change → result sequence described in the motion reference.

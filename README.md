@@ -2,11 +2,12 @@
 
 Make developer-focused launch films and animated product UI with Claude Code, Codex, or another agent that reads `SKILL.md` files.
 
-Two practical skills, extracted from work on the local **gtm-os** video library. They cover the whole job: inspect references, establish the story, build or record the visuals, render, review, and deliver editable assets.
+Three practical skills, extracted from work on the local **gtm-os** video library. They cover the whole job: inspect references, establish the story, build or record the visuals, render, review, and deliver editable assets.
 
 | Skill | Use it for |
 | --- | --- |
 | [launch-video](skills/launch-video/SKILL.md) | A product launch film with a hook, product proof, diagrams, real recordings, audio, and a useful CTA |
+| [slack-demo-video](skills/slack-demo-video/SKILL.md) | Editable Slack channels and threads with progress, approvals, Block Kit-style results, and clean editor footage |
 | [ui-mockup-video](skills/ui-mockup-video/SKILL.md) | An animated app interface: typing, streaming, tool calls, approval, cards, navigation, and visible results |
 
 ![A rendered frame from the included illustrative UI starter](docs/ui-mockup-preview.png)
@@ -19,7 +20,7 @@ cd demo-skills
 python3 scripts/install.py --agent claude
 ```
 
-This installs both skills into `~/.claude/skills`, including the supporting `gtm-os` files. It refuses to replace an existing skill. Start a new Claude Code session, then ask:
+This installs all three skills into `~/.claude/skills`, including the supporting `gtm-os` files. It refuses to replace an existing skill. Start a new Claude Code session, then ask:
 
 ```text
 Use /launch-video to make a 40-second product launch video.
@@ -33,7 +34,7 @@ Show a request, a streamed response, an approval, and the resulting saved page.
 Use illustrative demo data and keep the UI readable on a phone.
 ```
 
-For Codex: `python3 scripts/install.py --agent codex` installs into `~/.agents/skills`; invoke `$launch-video` or `$ui-mockup-video`. To use a project-specific location, pass `--dest /path/to/project/.claude/skills` (or `.agents/skills`). Preview any install with `--dry-run`. Other agents can read the two skill files directly.
+For Codex: `python3 scripts/install.py --agent codex` installs into `~/.agents/skills`; invoke `$launch-video`, `$ui-mockup-video`, or `$slack-demo-video`. To use a project-specific location, pass `--dest /path/to/project/.claude/skills` (or `.agents/skills`). Preview any install with `--dry-run`. Other agents can read the three skill files directly.
 
 ## Render the example
 
@@ -49,11 +50,29 @@ npm run studio
 # In another terminal, in this same directory:
 npm run render:launch
 npm run render:ui
+npm run render:slack
+npm run render:openmuse
+npm run render:opendots
+npm run review -- SlackThread OpenMuseLaunch OpenDotsLaunch
 npm run render:4k
 npm run poster
 ```
 
-The three compositions are `Launch` (24 seconds), `UiMockup` (12 seconds), and `DiagramLoop` (8 seconds), all at 30 fps. Output goes to `out/`. The example is silent and uses fictional data; the launch skill explains how to add a licensed or original soundtrack and real product footage.
+The six compositions are `Launch` (24 seconds), `UiMockup` (12 seconds), `DiagramLoop` (8 seconds), `SlackThread` (18 seconds), `OpenMuseLaunch` (36 seconds), and `OpenDotsLaunch` (32 seconds), all at 30 fps. Output goes to `out/`. The example is silent and uses fictional data; the launch skill explains how to add a licensed or original soundtrack and real product footage.
+
+## Studio examples and source
+
+The starter includes [Studio configuration](gtm-os/remotion-starter/remotion.config.ts), a [shared composition registry](gtm-os/remotion-starter/compositions.json), [Slack UI source](gtm-os/remotion-starter/src/SlackThread.tsx), and [product story schedules](gtm-os/remotion-starter/src/product-stories.ts). The [Studio workflow guide](skills/launch-video/references/studio-workflow.md) maps every composition to its active files and commands.
+
+`SlackThread` defaults to clean full-frame UI. Set `clean` to false in Studio input props for a presentation wrapper with disclosure. Render clean 4K/ProRes with `npm run render:slack:4k` / `npm run render:slack:prores`. These authored messages and receipts are illustrations; the clip does not call Slack APIs. Clean footage retains its disclosure in editor notes.
+
+The [OpenMuse](skills/launch-video/references/openmuse-recipe.md) and [OpenDots](skills/launch-video/references/opendots-recipe.md) recipes carry over story, evidence, capture, and editor practices. Their runnable examples use synthetic UI and neutral artwork. OpenDots' original launch film used Canvas; its Remotion composition is a new adaptation. Replace CTA placeholders and verify claims before using either template for a public film.
+
+| Slack thread | OpenMuse recipe | OpenDots recipe |
+| --- | --- | --- |
+| ![Illustrative Slack thread](docs/slack-preview.png) | ![Illustrative OpenMuse devices](docs/openmuse-preview.png) | ![Illustrative OpenDots saved Page](docs/opendots-preview.png) |
+
+Example request: `Use $slack-demo-video to make an 18-second clean Slack thread demo with a request, draft approval, saved Page receipt, and an editor handoff. Use synthetic content.`
 
 ## What carries over from the production work
 

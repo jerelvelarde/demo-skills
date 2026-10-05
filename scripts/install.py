@@ -6,7 +6,7 @@ import shutil
 import tempfile
 
 ROOT = Path(__file__).resolve().parents[1]
-SKILLS = ("launch-video", "ui-mockup-video")
+SKILLS = ("launch-video", "ui-mockup-video", "slack-demo-video")
 EXCLUDE = shutil.ignore_patterns("node_modules", "out", "dist", ".cache", ".git", ".DS_Store", "__pycache__", ".env", ".env.*", "recordings", "review")
 
 

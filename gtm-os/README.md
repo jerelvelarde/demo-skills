@@ -21,8 +21,13 @@ The initializer creates the editor folder structure, copies the starter into `05
 | `Launch` | 720 frames / 24 s | Problem, UI proof, architecture, CTA |
 | `UiMockup` | 360 frames / 12 s | Request → draft → approval → saved result |
 | `DiagramLoop` | 240 frames / 8 s | Complete diagram with aligned buses and path-following traffic |
+| `SlackThread` | 540 frames / 18 s | Channel → thread → review → approval → saved Page → replies |
+| `OpenMuseLaunch` | 1080 frames / 36 s | Protocol → inbox → research → goal → artifact → devices |
+| `OpenDotsLaunch` | 960 frames / 32 s | Conversation → approval → Page → routing → developer sketch |
 
-Edit `src/theme.ts` for visual tokens, `src/UiMockup.tsx` for UI content and event timing, `src/Diagram.tsx` for topology, and `src/Root.tsx` for story/timeline. All compositions share a 1920×1080 design canvas. `render:4k` rerenders at scale 2; it is not a transcode of the 1080p export. Fonts are bundled through a pinned Fontsource dependency. Rendering needs no app account or API key.
+Edit `src/theme.ts` for visual tokens, `src/UiMockup.tsx` for UI content and event timing, `src/Diagram.tsx` for topology, and `src/Root.tsx` for story/timeline. For product launch scenes, edit `src/product-stories.ts` (content/schedule) and `src/ProductLaunch.tsx` (shared layouts). For Slack, edit `src/slack-story.ts` (events/content/targets) and `src/SlackThread.tsx` (UI). `compositions.json` supplies the IDs, dimensions, fps, durations and review frames used by Studio and the export wrapper. Keep story lengths and registry duration synchronized. `remotion.config.ts` sets CLI/Studio defaults.
+
+All compositions share a 1920×1080 design canvas. `render:4k` rerenders at scale 2; it is not a transcode of the 1080p export. Fonts are bundled through a pinned Fontsource dependency. Rendering needs no app account or API key.
 
 ```sh
 cd remotion-starter
@@ -31,14 +36,22 @@ npm run typecheck
 npm run render:launch   # out/launch-1080p.mp4
 npm run render:ui       # out/ui-mockup-1080p.mp4
 npm run render:loop     # out/diagram-loop-1080p.mp4
+npm run render:slack    # out/slack-thread-1080p.mp4
+npm run render:slack:4k # out/slack-thread-4k.mp4
+npm run render:slack:prores # out/slack-thread-4k-prores.mov
+npm run render:openmuse # out/openmuse-launch-1080p.mp4
+npm run render:opendots # out/opendots-launch-1080p.mp4
+npm run review -- SlackThread OpenMuseLaunch OpenDotsLaunch
 npm run render:4k       # out/launch-4k.mp4
 npm run render:prores   # out/launch-4k-prores.mov
 npm run poster         # out/poster.png
 ```
 
-Each render writes a temporary file, checks its dimensions/duration, fully decodes it with FFmpeg, and then promotes it. Existing final names are protected; move/archive the previous file or choose another output name with `node render.mjs Launch out/new-name.mp4 2`.
+Each render writes a temporary file, checks its dimensions/frame rate/duration, fully decodes it with FFmpeg, and then promotes it. Existing final names are protected; move/archive the previous file or choose another output name with `node render.mjs Launch out/new-name.mp4 2`.
 
-The fictional app and data are explicitly labeled. The example includes no third-party logos, real recordings, soundtrack, or unverified product claims. It illustrates the workflow; the skill adapts it to the user's actual product. Remotion has its [own license](https://www.remotion.dev/license).
+Review stills go into a unique ignored `review/` directory. Inspect them rather than treating the successful command as a visual check. Slack uses `clean: true` by default: it fills the frame and has no disclosure overlay. Its synthetic representation is documented in the handoff notes. Set `clean: false` in Studio input props for a branded wrapper. For a CLI wrapper cut, pass `--props='{"clean":false}'` to `npx remotion render src/index.ts SlackThread out/slack-branded.mp4`; verify that direct CLI output with `tools/media-report.py --decode`.
+
+The product templates carry visible illustration captions. Their CTA lines are editable placeholders. The fictional app and data are explicitly labeled. The example includes no third-party logos, real recordings, soundtrack, or unverified product claims. It illustrates the workflow; the skill adapts it to the user's actual product. Remotion has its [own license](https://www.remotion.dev/license).
 
 ## Record actual UI
 
