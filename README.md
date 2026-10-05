@@ -58,7 +58,7 @@ npm run render:4k
 npm run poster
 ```
 
-The six compositions are `Launch` (24 seconds), `UiMockup` (12 seconds), `DiagramLoop` (8 seconds), `SlackThread` (18 seconds), `OpenMuseLaunch` (36 seconds), and `OpenDotsLaunch` (32 seconds), all at 30 fps. Output goes to `out/`. The example is silent and uses fictional data; the launch skill explains how to add a licensed or original soundtrack and real product footage.
+The six compositions are `Launch` (24 seconds), `UiMockup` (12 seconds), `DiagramLoop` (8 seconds), `SlackThread` (31 seconds), `OpenMuseLaunch` (36 seconds), and `OpenDotsLaunch` (32 seconds), all at 30 fps. Output goes to `out/`. The example is silent and uses fictional data; the launch skill explains how to add a licensed or original soundtrack and real product footage.
 
 ## Studio examples and source
 
@@ -72,7 +72,7 @@ The [OpenMuse](skills/launch-video/references/openmuse-recipe.md) and [OpenDots]
 | --- | --- | --- |
 | ![Illustrative Slack thread](docs/slack-preview.png) | ![Illustrative OpenMuse devices](docs/openmuse-preview.png) | ![Illustrative OpenDots saved Page](docs/opendots-preview.png) |
 
-Example request: `Use $slack-demo-video to make an 18-second clean Slack thread demo with a request, draft approval, saved Page receipt, and an editor handoff. Use synthetic content.`
+Example request: `Use $slack-demo-video to make a 31-second clean Slack thread demo with a request, draft approval, saved Page receipt, and an editor handoff. Use synthetic content.`
 
 ## What carries over from the production work
 

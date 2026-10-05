@@ -7,7 +7,7 @@ Resolve `gtm-os` at the repository root or inside this installed skill at `asset
 | Launch | `src/Root.tsx` | 24 s |
 | UiMockup | `src/UiMockup.tsx` | 12 s |
 | DiagramLoop | `src/Diagram.tsx` | 8 s |
-| SlackThread | `src/SlackThread.tsx`, `src/slack-story.ts` | 18 s |
+| SlackThread | `src/SlackThread.tsx`, `src/slack-story.ts` | 31 s |
 | OpenMuseLaunch | `src/ProductLaunch.tsx`, `src/product-stories.ts` | 36 s |
 | OpenDotsLaunch | `src/ProductLaunch.tsx`, `src/product-stories.ts` | 32 s |
 

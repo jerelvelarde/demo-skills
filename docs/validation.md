@@ -56,3 +56,16 @@ Validated on macOS arm64, Node 24.16.0, FFmpeg 8.1.1, and the existing Remotion 
 - README previews were extracted from the actual exported clips. Large media, dependencies, and local execution notes remain outside the commit.
 
 The three added examples are silent illustrations with synthetic content. Product CTA placeholders, pseudocode, generic routing diagrams, and mobile mock layouts need current product evidence and approved assets for a public launch. The ProRes command is provided but was not rendered during this expansion; no live Slack API, actual product capture, soundtrack, or Windows/Linux execution is claimed.
+
+## Slack visual fidelity revision — October 5, 2026
+
+The revised Slack example adapts the owner's earlier OpenDots/OpenTag desktop mock instead of the initial simplified white interface. It restores dark chrome, the app rail and workspace navigation, channel tabs, a formatting toolbar, native message/attachment hierarchy, APP and mention treatments, a sliding thread, two composers, progress rows, typing indicators, and scrolling replies/reactions. Reusable UI primitives are in `src/SlackUi.tsx`; timeline, colors, synthetic copy, and cursor targets remain in `src/slack-story.ts`.
+
+The timeline is now 31 seconds / 930 frames at 30 fps, matching the earlier example's reading holds. The authored sequence adds a visible draft and approval before saving. Personal photos and the OpenDots mascot are replaced with synthetic initials and a neutral inline bot icon. Provenance now identifies the selected source adaptation.
+
+- Complete 1920×1080 and direct 3840×2160 H.264 exports passed wrapper checks and full decode at 30 fps / 31 seconds.
+- The updated review-frame set rendered successfully. Entry, send/thread-opening boundaries, tool progress, draft, approval target, saved result, scrolling replies, reactions, and closing states were inspected. One-second samples extracted from the complete 1080p export were also reviewed.
+- The clean and branded closing frames were rendered and inspected. The README preview was replaced with a frame extracted from the revised export.
+- Typecheck, affected-source formatting, metadata validation, portable install/relocation checks, and documentation links passed. No runtime package or lockfile changes were needed.
+
+Review covers visual fidelity to the supplied mock and the illustrative interaction. It does not establish live Slack behavior or product execution.

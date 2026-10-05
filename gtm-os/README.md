@@ -21,11 +21,11 @@ The initializer creates the editor folder structure, copies the starter into `05
 | `Launch` | 720 frames / 24 s | Problem, UI proof, architecture, CTA |
 | `UiMockup` | 360 frames / 12 s | Request → draft → approval → saved result |
 | `DiagramLoop` | 240 frames / 8 s | Complete diagram with aligned buses and path-following traffic |
-| `SlackThread` | 540 frames / 18 s | Channel → thread → review → approval → saved Page → replies |
+| `SlackThread` | 930 frames / 31 s | Channel → thread → review → approval → saved Page → replies |
 | `OpenMuseLaunch` | 1080 frames / 36 s | Protocol → inbox → research → goal → artifact → devices |
 | `OpenDotsLaunch` | 960 frames / 32 s | Conversation → approval → Page → routing → developer sketch |
 
-Edit `src/theme.ts` for visual tokens, `src/UiMockup.tsx` for UI content and event timing, `src/Diagram.tsx` for topology, and `src/Root.tsx` for story/timeline. For product launch scenes, edit `src/product-stories.ts` (content/schedule) and `src/ProductLaunch.tsx` (shared layouts). For Slack, edit `src/slack-story.ts` (events/content/targets) and `src/SlackThread.tsx` (UI). `compositions.json` supplies the IDs, dimensions, fps, durations and review frames used by Studio and the export wrapper. Keep story lengths and registry duration synchronized. `remotion.config.ts` sets CLI/Studio defaults.
+Edit `src/theme.ts` for visual tokens, `src/UiMockup.tsx` for UI content and event timing, `src/Diagram.tsx` for topology, and `src/Root.tsx` for story/timeline. For product launch scenes, edit `src/product-stories.ts` (content/schedule) and `src/ProductLaunch.tsx` (shared layouts). For Slack, edit `src/slack-story.ts` (events/content/targets) and `src/SlackThread.tsx` (desktop/thread/scroll) and `src/SlackUi.tsx` (native UI primitives). `compositions.json` supplies the IDs, dimensions, fps, durations and review frames used by Studio and the export wrapper. Keep story lengths and registry duration synchronized. `remotion.config.ts` sets CLI/Studio defaults.
 
 All compositions share a 1920×1080 design canvas. `render:4k` rerenders at scale 2; it is not a transcode of the 1080p export. Fonts are bundled through a pinned Fontsource dependency. Rendering needs no app account or API key.
 

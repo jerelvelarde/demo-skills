@@ -18,8 +18,8 @@ For a new illustration, use `SlackThread` in the portable starter. In a repo clo
 ## Build the interaction
 
 1. Establish the channel, request, attachment, agent work, review decision, saved receipt, and final hold. Use synthetic identities and short content unless approved source material is provided. Keep verified product claims separate from illustrative message text.
-2. Write an event table in frames, including reading holds. Read [Slack choreography](references/slack-choreography.md) before editing the conversation. Preserve thread nesting and native-looking message hierarchy rather than adding promotional text inside every message.
-3. Keep timing in `src/slack-story.ts`, UI components in `src/SlackThread.tsx`, and send/approval targets in the shared geometry. Mount each block at its event; derive all state from the frame so seeking and parallel rendering work.
+2. Write an event table in frames, including reading holds. Read [Slack choreography](references/slack-choreography.md) before editing the conversation. Preserve the supplied native chrome, density, thread-opening behavior, and message hierarchy rather than adding promotional text inside every message.
+3. Keep timing in `src/slack-story.ts`, desktop/thread layout in `src/SlackThread.tsx`, reusable native UI components in `src/SlackUi.tsx`, and send/approval targets in the shared geometry. Mount each block at its event; derive all state from the frame so seeking and parallel rendering work.
 4. Use fields, sections, dividers, action buttons, and context to communicate the result. Make progress, a reviewable draft, approval, and the saved receipt different visible states. Do not show a successful save before the approval.
 5. Render clean UI at the full viewport using `clean: true`. For a presentation wrapper, use `clean: false` in Studio input props. Retarget controls when layout changes; cropping a smaller mockup is not full-frame rendering.
 

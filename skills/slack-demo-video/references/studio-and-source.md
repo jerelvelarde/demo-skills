@@ -10,12 +10,13 @@ npm run typecheck
 npm run studio
 ```
 
-Select `SlackThread`. It is an 18-second, 540-frame, 30 fps example on a 1920×1080 canvas. Studio's editable input props expose `clean`; true fills the viewport, false adds a title and disclosure wrapper. The clean default intentionally has no disclosure burn-in; preserve its illustrative status in delivery notes.
+Select `SlackThread`. It is a 31-second, 930-frame, 30 fps example on a 1920×1080 canvas. Studio's editable input props expose `clean`; true fills the viewport, false adds a title and disclosure wrapper. The clean default intentionally has no disclosure burn-in; preserve its illustrative status in delivery notes.
 
 | File | Edit here |
 | --- | --- |
 | `src/slack-story.ts` | Synthetic text, event frames, send, thread, and approval centers |
-| `src/SlackThread.tsx` | Channel, thread, composer, blocks, wrapper |
+| `src/SlackThread.tsx` | Native desktop layout, sliding thread, scroll, cursor, wrapper |
+| `src/SlackUi.tsx` | Icons, avatars, messages, composers, and Block Kit-style primitives |
 | `compositions.json` | Duration, dimensions, cadence, review frames |
 | `remotion.config.ts` | CLI/Studio defaults |
 | `public/asset-manifest.csv` | Imported asset sources and rights |
