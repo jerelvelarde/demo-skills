@@ -13,6 +13,12 @@ Inspect the supplied screenshot, Figma nodes, app, or local source. Identify the
 
 Decide whether the deliverable is an illustrative UI animation, a reconstruction of observed behavior, or an actual recording. Respect the user's choice. If actual capture is requested, follow the app's real state changes; do not replace them with generated responses. The companion launch-video recording guide covers capture sizing and provenance.
 
+## Choose the example surface
+
+The starter includes `UiMockup` for workspace interactions and `SlackThread` for channel/thread conversations. For detailed Slack choreography, use `slack-demo-video` when available. Keep clean full-frame UI and branded presentation footage as deliberate output choices. If removing promotional overlays for an editor, preserve the illustrative disclosure in the handoff notes.
+
+Edit content and event frames separately from layout. The Slack source exposes shared send, thread, and approval centers, so retarget both the control and cursor together. Update `compositions.json` duration/review frames when the schedule changes. Use `npm run review -- UiMockup` or `npm run review -- SlackThread` to generate actual review stills before the full export.
+
 ## Choreograph the interaction
 
 Write a small event table: frame, action, visible state, and hold. A useful sequence is request → response → tool/result card → decision → completed artifact. Use only the pieces needed for the feature. Read [interaction and motion](references/interaction-and-motion.md) for cursor timing, chat flow, diagrams, and readable sizing.

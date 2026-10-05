@@ -40,3 +40,32 @@ Validated on macOS arm64 with Node 24.16.0, the checked-in lockfile, and Remotio
 - A source scan found no matching access tokens, private keys, private context links, or user-specific absolute paths. Generated output, dependencies, and test-capture data remain ignored.
 
 The ProRes command is provided but was not rendered in this validation. No live product account, actual app integration, mobile capture, soundtrack, or Windows/Linux execution is claimed by these checks.
+
+## Studio expansion — October 5, 2026
+
+Validated on macOS arm64, Node 24.16.0, FFmpeg 8.1.1, and the existing Remotion 4.0.530 lockfile. No dependency versions changed.
+
+- `npm ci` and explicit TypeScript typecheck passed. The new/changed Studio source, config, registry, and Node helpers passed Prettier 3.6.2 checks; Node/Python syntax checks passed. This repo has no separate lint script.
+- All three skills passed the skill-creator metadata validator. `scripts/check.py` passed temporary installation, dry-run isolation, relocated project initialization, nested skill reference checks, rejection of invalid helper IDs, and existing-export protection. Installed bundles exclude dependencies, review outputs, exports, and environment files.
+- Remotion bundled and listed all six compositions with the expected metadata. The original Launch, UiMockup, and DiagramLoop commands each rendered a complete 1080p MP4 and passed full decode.
+- SlackThread (18 s / 540 frames), OpenMuseLaunch (36 s / 1080 frames), and OpenDotsLaunch (32 s / 960 frames) each rendered complete 1920×1080, 30 fps H.264 exports. The render wrapper verified dimensions, frame rate, duration, and full decode. An additional standalone media-report decode passed for each new 1080p clip.
+- SlackThread additionally rendered directly at 3840×2160, 30 fps, 18 seconds and passed dimensions/cadence/duration checks and full decode. Its final 4K frame was extracted for visual review.
+- The review helper rendered scene boundaries and key interaction states. Actual pixels and one-second samples extracted from all three exports were inspected for fit, state order, readable holds, and closing frames. This is sampled visual review, not a claim of human editorial playback or live product acceptance.
+- Slack's clean final state, thread-click cursor target, and branded wrapper were inspected. Review caught and corrected a stale saving line. The cursor now selects the thread affordance before the reply content appears.
+- Live Remotion Studio loaded all six IDs. Slack's clean/branded toggle saved successfully to source in both directions, with the clean default restored. Composition IDs/components remain literal and metadata spreads precede explicit props so Studio's source editor can resolve them.
+- README previews were extracted from the actual exported clips. Large media, dependencies, and local execution notes remain outside the commit.
+
+The three added examples are silent illustrations with synthetic content. Product CTA placeholders, pseudocode, generic routing diagrams, and mobile mock layouts need current product evidence and approved assets for a public launch. The ProRes command is provided but was not rendered during this expansion; no live Slack API, actual product capture, soundtrack, or Windows/Linux execution is claimed.
+
+## Slack visual fidelity revision — October 5, 2026
+
+The revised Slack example adapts the owner's earlier OpenDots/OpenTag desktop mock instead of the initial simplified white interface. It restores dark chrome, the app rail and workspace navigation, channel tabs, a formatting toolbar, native message/attachment hierarchy, APP and mention treatments, a sliding thread, two composers, progress rows, typing indicators, and scrolling replies/reactions. Reusable UI primitives are in `src/SlackUi.tsx`; timeline, colors, synthetic copy, and cursor targets remain in `src/slack-story.ts`.
+
+The timeline is now 31 seconds / 930 frames at 30 fps, matching the earlier example's reading holds. The authored sequence adds a visible draft and approval before saving. Personal photos and the OpenDots mascot are replaced with synthetic initials and a neutral inline bot icon. Provenance now identifies the selected source adaptation.
+
+- Complete 1920×1080 and direct 3840×2160 H.264 exports passed wrapper checks and full decode at 30 fps / 31 seconds.
+- The updated review-frame set rendered successfully. Entry, send/thread-opening boundaries, tool progress, draft, approval target, saved result, scrolling replies, reactions, and closing states were inspected. One-second samples extracted from the complete 1080p export were also reviewed.
+- The clean and branded closing frames were rendered and inspected. The README preview was replaced with a frame extracted from the revised export.
+- Typecheck, affected-source formatting, metadata validation, portable install/relocation checks, and documentation links passed. No runtime package or lockfile changes were needed.
+
+Review covers visual fidelity to the supplied mock and the illustrative interaction. It does not establish live Slack behavior or product execution.

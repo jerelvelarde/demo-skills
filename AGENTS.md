@@ -1,6 +1,6 @@
 # Working in demo-skills
 
-This repository packages two video-production skills and a portable starter. Keep them usable without private tools, company accounts, or the original local reference archive.
+This repository packages three video-production skills and a portable starter. Keep them usable without private tools, company accounts, or the original local reference archive.
 
 - Keep `SKILL.md` frontmatter limited to widely supported `name` and `description` fields. Put optional Codex metadata in `agents/openai.yaml`.
 - Skills installed by `scripts/install.py` carry a copy of `gtm-os` under `assets/gtm-os`. Repo users use the top-level directory. Keep both paths documented.

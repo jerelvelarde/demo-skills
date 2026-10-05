@@ -24,9 +24,10 @@ def main():
         front = text.split("---", 2)[1]
         assert f"name: {skill.name}" in front and "description:" in front
         assert re.fullmatch(r"[a-z0-9-]+", skill.name)
-        for ref in re.findall(r"\]\(([^)#]+)(?:#[^)]*)?\)", text):
-            if "://" not in ref:
-                assert (skill / ref).exists(), (skill, ref)
+        for document in skill.rglob("*.md"):
+            for ref in re.findall(r"\]\(([^)#]+)(?:#[^)]*)?\)", document.read_text()):
+                if "://" not in ref:
+                    assert (document.parent / ref).exists(), (document, ref)
     for doc in [ROOT / "README.md", ROOT / "gtm-os/README.md"]:
         for ref in re.findall(r"\]\(([^)#]+)(?:#[^)]*)?\)", doc.read_text()):
             if "://" not in ref:
@@ -34,11 +35,20 @@ def main():
     with tempfile.TemporaryDirectory(prefix="demo-skills-check-") as temp:
         temp = Path(temp)
         installed = temp / "skills"
+        preview = run(sys.executable, ROOT / "scripts/install.py", "--dest", installed, "--dry-run")
+        assert "slack-demo-video" in preview.stdout and not installed.exists()
         run(sys.executable, ROOT / "scripts/install.py", "--dest", installed)
-        for name in ("launch-video", "ui-mockup-video"):
+        for name in ("launch-video", "ui-mockup-video", "slack-demo-video"):
             bundle = installed / name
             assert (bundle / "assets/gtm-os/remotion-starter/package-lock.json").is_file()
-            assert not (bundle / "assets/gtm-os/remotion-starter/node_modules").exists()
+            for excluded in ("node_modules", "out", "review", ".env"):
+                assert not (bundle / "assets/gtm-os/remotion-starter" / excluded).exists()
+            starter = bundle / "assets/gtm-os/remotion-starter"
+            assert (starter / "remotion.config.ts").is_file()
+            registry = json.loads((starter / "compositions.json").read_text())
+            assert set(registry) == {"Launch", "UiMockup", "DiagramLoop", "SlackThread", "OpenMuseLaunch", "OpenDotsLaunch"}
+            assert (starter / "src/SlackThread.tsx").is_file()
+            assert (starter / "public/ASSETS.md").is_file()
         marker = installed / "launch-video/local-edit.txt"
         marker.write_text("preserve this edit")
         run(sys.executable, ROOT / "scripts/install.py", "--dest", installed, success=False)
@@ -48,6 +58,19 @@ def main():
         run(sys.executable, relocated_init, project)
         assert (project / "05_Code/src/Root.tsx").is_file()
         assert (project / "06_Editor_Notes/media-inventory.csv").is_file()
+        node = shutil.which("node")
+        if not node:
+            raise RuntimeError("Install Node.js 22+ to check the relocated render helpers")
+        renderer = project / "05_Code/render.mjs"
+        invalid = run(node, renderer, "Unknown", "out/invalid.mp4", success=False)
+        assert "Usage:" in invalid.stderr
+        invalid_review = run(node, project / "05_Code/review.mjs", "Unknown", success=False)
+        assert "Usage:" in invalid_review.stderr
+        protected = project / "05_Code/protected.mp4"
+        protected.write_bytes(b"preserve accepted export")
+        overwrite = run(node, renderer, "SlackThread", protected, "1", success=False)
+        assert "Refusing to overwrite" in overwrite.stderr
+        assert protected.read_bytes() == b"preserve accepted export"
         run(sys.executable, relocated_init, project, success=False)
         if shutil.which("ffmpeg") and shutil.which("ffprobe"):
             fixture = temp / "fixture.mp4"

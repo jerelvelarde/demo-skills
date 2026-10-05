@@ -9,5 +9,3 @@ export const theme = {
   mint: '#8bdfc1',
   font: 'Inter, sans-serif',
 };
-
-export const layout = {width: 1920, height: 1080, fps: 30};
