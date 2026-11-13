@@ -46,7 +46,7 @@ def main():
             starter = bundle / "assets/gtm-os/remotion-starter"
             assert (starter / "remotion.config.ts").is_file()
             registry = json.loads((starter / "compositions.json").read_text())
-            assert set(registry) == {"Launch", "UiMockup", "DiagramLoop", "SlackThread", "OpenMuseLaunch", "OpenDotsLaunch"}
+            assert set(registry) == {"Launch", "UiMockup", "DiagramLoop", "SlackThread", "OpenFuseLaunch", "OpenDotsLaunch"}
             assert (starter / "src/SlackThread.tsx").is_file()
             assert (starter / "public/ASSETS.md").is_file()
         marker = installed / "launch-video/local-edit.txt"

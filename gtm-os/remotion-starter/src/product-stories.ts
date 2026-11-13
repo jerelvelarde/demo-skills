@@ -19,12 +19,12 @@ export type Beat = {
   lines: string[];
 };
 export const productStories = {
-  OpenMuse: {
+  OpenFuse: {
     framesPerBeat: 135,
     beats: [
       {
         kind: 'title',
-        title: 'OpenMuse',
+        title: 'OpenFuse',
         caption: 'An editable launch-film recipe',
         lines: [
           'A request becomes a plan.',
@@ -94,7 +94,7 @@ export const productStories = {
         title: 'Make this launch your own.',
         caption: 'Set a verified product URL before publishing.',
         lines: [
-          'OpenMuse launch template',
+          'OpenFuse launch template',
           'Product evidence → editable source → final film',
           'Your repository or launch URL',
         ],

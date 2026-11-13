@@ -8,12 +8,12 @@ Resolve `gtm-os` at the repository root or inside this installed skill at `asset
 | UiMockup | `src/UiMockup.tsx` | 12 s |
 | DiagramLoop | `src/Diagram.tsx` | 8 s |
 | SlackThread | `src/SlackThread.tsx`, `src/slack-story.ts` | 31 s |
-| OpenMuseLaunch | `src/ProductLaunch.tsx`, `src/product-stories.ts` | 36 s |
+| OpenFuseLaunch | `src/ProductLaunch.tsx`, `src/product-stories.ts` | 36 s |
 | OpenDotsLaunch | `src/ProductLaunch.tsx`, `src/product-stories.ts` | 32 s |
 
 `compositions.json` supplies metadata to both Studio registration and export verification. `remotion.config.ts` supplies CLI defaults. The product recipes share layouts but have separate beat content in `product-stories.ts`. Keep `framesPerBeat × beat count` equal to registry duration when changing timing. Update review frames to include both sides of each scene boundary plus critical action/result states.
 
-`npm run review -- OpenMuseLaunch OpenDotsLaunch` renders stills into a unique ignored review directory. Inspect those files, then render the full film with `npm run render:openmuse` or `npm run render:opendots`. Use `node render.mjs OpenMuseLaunch out/revision-2.mp4 1` for another output name, or scale `2` for a direct 4K render. Existing exports are protected. The render wrapper verifies dimensions, duration, frame rate, and full decode.
+`npm run review -- OpenFuseLaunch OpenDotsLaunch` renders stills into a unique ignored review directory. Inspect those files, then render the full film with `npm run render:openfuse` or `npm run render:opendots`. Use `node render.mjs OpenFuseLaunch out/revision-2.mp4 1` for another output name, or scale `2` for a direct 4K render. Existing exports are protected. The render wrapper verifies dimensions, duration, frame rate, and full decode.
 
 Frames are local to each Sequence. Keep state derived from `useCurrentFrame()` and avoid timers, network data, wall-clock animation, or random values without a fixed deterministic source. Review by seeking as well as playing. Keep imported media local and document it in `public/asset-manifest.csv`.
 

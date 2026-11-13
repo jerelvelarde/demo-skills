@@ -8,7 +8,7 @@ The local archive is useful for inspecting a real production decision, not for b
 
 `aimock` starts with an engineering problem and makes code the main visual subject. Its source notes tie numerical claims to dated evidence. Generalize the structure, not the old numbers. Keep code large enough to read; a tiny editor screenshot in a decorative frame is not useful proof.
 
-`openmuse-demo` uses layered product surfaces and diagrams with documented illustrative sequences. The key distinction is what was actually recorded versus what was animated to explain a capability. Carry that distinction into each delivery's notes.
+`openfuse-demo` uses layered product surfaces and diagrams with documented illustrative sequences. The key distinction is what was actually recorded versus what was animated to explain a capability. Carry that distinction into each delivery's notes.
 
 `opendots` combines real UI clips with branded scenes and a human-editor package. The editorial lessons include theme continuity, callout safe areas, consistent channel logo sizing, a legible GitHub CTA, and source-media honesty. Preserve its workflow lessons without carrying over the old film's particular backdrop, mascots, or defects.
 
