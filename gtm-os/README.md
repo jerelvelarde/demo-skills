@@ -22,7 +22,7 @@ The initializer creates the editor folder structure, copies the starter into `05
 | `UiMockup` | 360 frames / 12 s | Request → draft → approval → saved result |
 | `DiagramLoop` | 240 frames / 8 s | Complete diagram with aligned buses and path-following traffic |
 | `SlackThread` | 930 frames / 31 s | Channel → thread → review → approval → saved Page → replies |
-| `OpenMuseLaunch` | 1080 frames / 36 s | Protocol → inbox → research → goal → artifact → devices |
+| `OpenFuseLaunch` | 1080 frames / 36 s | Protocol → inbox → research → goal → artifact → devices |
 | `OpenDotsLaunch` | 960 frames / 32 s | Conversation → approval → Page → routing → developer sketch |
 
 Edit `src/theme.ts` for visual tokens, `src/UiMockup.tsx` for UI content and event timing, `src/Diagram.tsx` for topology, and `src/Root.tsx` for story/timeline. For product launch scenes, edit `src/product-stories.ts` (content/schedule) and `src/ProductLaunch.tsx` (shared layouts). For Slack, edit `src/slack-story.ts` (events/content/targets) and `src/SlackThread.tsx` (desktop/thread/scroll) and `src/SlackUi.tsx` (native UI primitives). `compositions.json` supplies the IDs, dimensions, fps, durations and review frames used by Studio and the export wrapper. Keep story lengths and registry duration synchronized. `remotion.config.ts` sets CLI/Studio defaults.
@@ -39,9 +39,9 @@ npm run render:loop     # out/diagram-loop-1080p.mp4
 npm run render:slack    # out/slack-thread-1080p.mp4
 npm run render:slack:4k # out/slack-thread-4k.mp4
 npm run render:slack:prores # out/slack-thread-4k-prores.mov
-npm run render:openmuse # out/openmuse-launch-1080p.mp4
+npm run render:openfuse # out/openfuse-launch-1080p.mp4
 npm run render:opendots # out/opendots-launch-1080p.mp4
-npm run review -- SlackThread OpenMuseLaunch OpenDotsLaunch
+npm run review -- SlackThread OpenFuseLaunch OpenDotsLaunch
 npm run render:4k       # out/launch-4k.mp4
 npm run render:prores   # out/launch-4k-prores.mov
 npm run poster         # out/poster.png

@@ -51,14 +51,14 @@ npm run studio
 npm run render:launch
 npm run render:ui
 npm run render:slack
-npm run render:openmuse
+npm run render:openfuse
 npm run render:opendots
-npm run review -- SlackThread OpenMuseLaunch OpenDotsLaunch
+npm run review -- SlackThread OpenFuseLaunch OpenDotsLaunch
 npm run render:4k
 npm run poster
 ```
 
-The six compositions are `Launch` (24 seconds), `UiMockup` (12 seconds), `DiagramLoop` (8 seconds), `SlackThread` (31 seconds), `OpenMuseLaunch` (36 seconds), and `OpenDotsLaunch` (32 seconds), all at 30 fps. Output goes to `out/`. The example is silent and uses fictional data; the launch skill explains how to add a licensed or original soundtrack and real product footage.
+The six compositions are `Launch` (24 seconds), `UiMockup` (12 seconds), `DiagramLoop` (8 seconds), `SlackThread` (31 seconds), `OpenFuseLaunch` (36 seconds), and `OpenDotsLaunch` (32 seconds), all at 30 fps. Output goes to `out/`. The example is silent and uses fictional data; the launch skill explains how to add a licensed or original soundtrack and real product footage.
 
 ## Studio examples and source
 
@@ -66,11 +66,11 @@ The starter includes [Studio configuration](gtm-os/remotion-starter/remotion.con
 
 `SlackThread` defaults to clean full-frame UI. Set `clean` to false in Studio input props for a presentation wrapper with disclosure. Render clean 4K/ProRes with `npm run render:slack:4k` / `npm run render:slack:prores`. These authored messages and receipts are illustrations; the clip does not call Slack APIs. Clean footage retains its disclosure in editor notes.
 
-The [OpenMuse](skills/launch-video/references/openmuse-recipe.md) and [OpenDots](skills/launch-video/references/opendots-recipe.md) recipes carry over story, evidence, capture, and editor practices. Their runnable examples use synthetic UI and neutral artwork. OpenDots' original launch film used Canvas; its Remotion composition is a new adaptation. Replace CTA placeholders and verify claims before using either template for a public film.
+The [OpenFuse](skills/launch-video/references/openfuse-recipe.md) and [OpenDots](skills/launch-video/references/opendots-recipe.md) recipes carry over story, evidence, capture, and editor practices. Their runnable examples use synthetic UI and neutral artwork. OpenDots' original launch film used Canvas; its Remotion composition is a new adaptation. Replace CTA placeholders and verify claims before using either template for a public film.
 
-| Slack thread | OpenMuse recipe | OpenDots recipe |
+| Slack thread | OpenFuse recipe | OpenDots recipe |
 | --- | --- | --- |
-| ![Illustrative Slack thread](docs/slack-preview.png) | ![Illustrative OpenMuse devices](docs/openmuse-preview.png) | ![Illustrative OpenDots saved Page](docs/opendots-preview.png) |
+| ![Illustrative Slack thread](docs/slack-preview.png) | ![Illustrative OpenFuse devices](docs/openfuse-preview.png) | ![Illustrative OpenDots saved Page](docs/opendots-preview.png) |
 
 Example request: `Use $slack-demo-video to make a 31-second clean Slack thread demo with a request, draft approval, saved Page receipt, and an editor handoff. Use synthetic content.`
 

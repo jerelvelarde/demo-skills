@@ -1,8 +1,8 @@
-# OpenMuse launch recipe
+# OpenFuse launch recipe
 
-Use this reference when producing an OpenMuse film or a similar agent-workspace story. Inspect the current product and brand inputs first. This recipe is informed by a historical local film; it is not current evidence of integrations or product availability.
+Use this reference when producing an OpenFuse film or a similar agent-workspace story. Inspect the current product and brand inputs first. This recipe is informed by a historical local film; it is not current evidence of integrations or product availability.
 
-The bundled `OpenMuseLaunch` is a new 36-second Remotion template with eight equal beats. Edit its story in `src/product-stories.ts` and shared layout in `src/ProductLaunch.tsx`.
+The bundled `OpenFuseLaunch` is a new 36-second Remotion template with eight equal beats. Edit its story in `src/product-stories.ts` and shared layout in `src/ProductLaunch.tsx`.
 
 | Beat | Show | Evidence needed for a real launch |
 | --- | --- | --- |

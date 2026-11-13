@@ -1,7 +1,7 @@
 import {Composition, Sequence, useCurrentFrame} from 'remotion';
 import registry from '../compositions.json';
 import {SlackThread} from './SlackThread';
-import {OpenMuseLaunch, OpenDotsLaunch} from './ProductLaunch';
+import {OpenFuseLaunch, OpenDotsLaunch} from './ProductLaunch';
 import {UiMockup} from './UiMockup';
 import {Diagram} from './Diagram';
 import {Field, Label} from './primitives';
@@ -150,9 +150,9 @@ export function Root() {
         defaultProps={{clean: true}}
       />
       <Composition
-        {...metadata('OpenMuseLaunch')}
-        id="OpenMuseLaunch"
-        component={OpenMuseLaunch}
+        {...metadata('OpenFuseLaunch')}
+        id="OpenFuseLaunch"
+        component={OpenFuseLaunch}
       />
       <Composition
         {...metadata('OpenDotsLaunch')}

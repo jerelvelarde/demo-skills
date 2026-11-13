@@ -338,7 +338,7 @@ function ProductScene({
 function ProductLaunch({product}: {product: keyof typeof productStories}) {
   const story = productStories[product];
   const metadata =
-    registry[product === 'OpenMuse' ? 'OpenMuseLaunch' : 'OpenDotsLaunch'];
+    registry[product === 'OpenFuse' ? 'OpenFuseLaunch' : 'OpenDotsLaunch'];
   if (story.beats.length * story.framesPerBeat !== metadata.durationInFrames) {
     throw new Error(
       `${product}: story length must match compositions.json durationInFrames`,
@@ -364,8 +364,8 @@ function ProductLaunch({product}: {product: keyof typeof productStories}) {
     </>
   );
 }
-export function OpenMuseLaunch() {
-  return <ProductLaunch product="OpenMuse" />;
+export function OpenFuseLaunch() {
+  return <ProductLaunch product="OpenFuse" />;
 }
 export function OpenDotsLaunch() {
   return <ProductLaunch product="OpenDots" />;
